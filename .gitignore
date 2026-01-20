@@ -1,0 +1,48 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build
+.next/
+out/
+build/
+dist/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Testing
+coverage/
+.nyc_output/
+
+# Misc
+*.tsbuildinfo
+next-env.d.ts
+
+# Vercel
+.vercel
+
+# Local test data (keep structure, ignore actual images)
+tests/datasets/printed/*.jpg
+tests/datasets/printed/*.png
+tests/datasets/handwriting/*.jpg
+tests/datasets/handwriting/*.png
+tests/datasets/mixed/*.jpg
+tests/datasets/mixed/*.png
+!tests/datasets/**/.gitkeep
