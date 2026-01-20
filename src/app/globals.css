@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 4%;
+    --foreground: 60 5% 96%;
+    --card: 240 10% 8%;
+    --card-foreground: 60 5% 96%;
+    --popover: 240 10% 8%;
+    --popover-foreground: 60 5% 96%;
+    --primary: 43 60% 58%;
+    --primary-foreground: 240 10% 4%;
+    --secondary: 168 45% 40%;
+    --secondary-foreground: 60 5% 96%;
+    --muted: 240 10% 14%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 43 60% 58%;
+    --accent-foreground: 240 10% 4%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 60 5% 96%;
+    --border: 0 0% 100% / 0.06;
+    --input: 240 10% 14%;
+    --ring: 43 60% 58%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Background gradient pattern */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+      ellipse 80% 50% at 50% -20%,
+      rgba(212, 168, 83, 0.08) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 60% 40% at 80% 100%,
+      rgba(61, 154, 139, 0.06) 0%,
+      transparent 40%
+    );
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--foreground) / 0.5);
+}
+
+/* Animation utilities */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 0.8s linear infinite;
+}
