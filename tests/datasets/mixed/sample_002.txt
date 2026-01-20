@@ -1,0 +1,3 @@
+MaxOCR - ระบบแปลงภาพเป็นข้อความ
+Powered by Typhoon AI
+Thai OCR System v1.0
